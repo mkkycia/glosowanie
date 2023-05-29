@@ -9,7 +9,7 @@
             exit();
 		}
 		echo "jestes zalogowany jako " . $_SESSION["username"];
-
+        echo "cos zedytowalem"
     ?>
 </BODY>
 </HTML>
