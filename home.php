@@ -1,6 +1,9 @@
 <HTML>
     <HEAD>
+<link href="https://www.ukodowani.pl/favicon.ico" rel="icon" type="image/x-icon">
+
     </HEAD>
+
 <BODY>
     <?php
         session_start();

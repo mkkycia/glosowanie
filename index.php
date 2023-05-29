@@ -1,5 +1,6 @@
 <html>
 <head>
+<link href="https://www.ukodowani.pl/favicon.ico" rel="icon" type="image/x-icon">
 <title>LOGOWANIE DO STR0NY</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <!--

@@ -1,6 +1,8 @@
 <html>
 <head>
 <audio src="https://vgmsite.com/soundtracks/minecraft/esiyjzozpe/Volume%20Alpha%2008.%20Minecraft.mp3" autoplay></audio>
+<link href="https://www.ukodowani.pl/favicon.ico" rel="icon" type="image/x-icon">
+
 <link rel="shortcut icon" src="http://potencjalkobiet.pl/img/rada/lewkowicz.jpg">
 <title> Rejestracja </title>
 </head>
