@@ -6,15 +6,17 @@
 <?php
 session_start();
 include "db_conn.php";
-if (isset($_POST['uname']) && isset($_POST['password'])) {
+if (isset($_POST['uname'])) && isset($_POST['password'])) {
     function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
        $data = htmlspecialchars($data);
        return $data;
     }
-    $uname = validate($_POST['uname']);
-    $pass = validate($_POST['password']);
+    ///https://www.ukodowani.pl/2020/04/php-szyfrowanie-hasa.html
+    /// strona powyżej to jest ta strona z której wziąłem to. Zapewne to co dodałem nie działa ale nie chce mi się tego sprawdzać teraz.
+    $uname = validate(crypt($_POST['uname']));
+    $pass = validate(crypt($_POST['password']));
     if (empty($uname)) {
         header("Location: index.php?error=User Name is required");
         exit();
@@ -30,7 +32,7 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         $result = $conn->query($sql);
         if ($result->rowCount() === 1) {
             foreach ($result as $row){
-                if ($row['username'] === $uname && $row['password'] === $pass) {
+                if (hash_equals($row['username'], $uname) && hash_equals($row['password'], $pass)) {
                     echo "Logged in!";
                     $_SESSION['loggedin'] = true;
                     $_SESSION['username'] = $row['username'];
