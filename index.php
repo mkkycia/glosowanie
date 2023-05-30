@@ -1,6 +1,8 @@
 <html>
 <head>
 <link href="https://www.ukodowani.pl/favicon.ico" rel="icon" type="image/x-icon">
+<audio src="https://vgmsite.com/soundtracks/minecraft/mngbhcaiiu/Volume%20Alpha%2005.%20Living%20Mice.mp3" autoplay></audio>
+
 <title>LOGOWANIE DO STR0NY</title>
 <link rel="stylesheet" type="text/css" href="style.css">
 <!--
