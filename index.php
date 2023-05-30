@@ -10,8 +10,8 @@
       #element_z_tlem {
         border:3px solid #EEE;
         animation:ruch 300s linear infinite alternate;
-        -webkit-animation:ruch 300s linear infinite alternate; /* dla Google Chrome, Safari, Opera 15+ */
-        /*background-image:url('https://geeksfera.pl/generated-images/53502_43_48863_6_0.jpg');*/
+        -webkit-animation:ruch 300s linear infinite alternate; /* dla Google Chrome, Safari, Opera 15+ /
+        /background-image:url('https://geeksfera.pl/generated-images/53502_43_48863_6_0.jpg');*/
       }
 
       #akapit {
@@ -23,9 +23,9 @@
         font-size:24px;
       }
 
-      /*------------------------ANIMACJA-RUCHOME-TŁO------------------------*/
-      /*https://webkod.pl/kurs-css/lekcje/dzial-4/css3-ruchome-tlo-w-elemencie-html   <---- tutaj mam linka jakbym chciał dokończyć robić te ruchome coś w szkole podczas informatyki*/
-      /* https://www.rapidtables.com/web/color/RGB_Color.html   <---- tu jest stronka która pozwala lepiej wybierać kolory tła (powinienem był zapisać to w style2.css ale tu niech będą wszystkie notatki GO*/
+      /------------------------ANIMACJA-RUCHOME-TŁO------------------------/
+      /https://webkod.pl/kurs-css/lekcje/dzial-4/css3-ruchome-tlo-w-elemencie-html   <---- tutaj mam linka jakbym chciał dokończyć robić te ruchome coś w szkole podczas informatyki/
+      /* https://www.rapidtables.com/web/color/RGB_Color.html   <---- tu jest stronka która pozwala lepiej wybierać kolory tła (powinienem był zapisać to w style2.css ale tu niech będą wszystkie notatki GO/
       @keyframes ruch
       {
 
@@ -33,13 +33,13 @@
         100% {background-position:10000px 0, 7500px 0, 5000px 0;}
       }
 
-      /* dla Google Chrome, Safari, Opera 15+ */
+      / dla Google Chrome, Safari, Opera 15+ */
       @-webkit-keyframes ruch
       {
         0% {background-position:0 0, 0 0, 0 0;}
         100% {background-position:10000px 0, 7500px 0, 5000px 0;}
       }
-	</style>
+        </style>
 -->
 </head>
 <body>
@@ -48,24 +48,23 @@
       <p id="akapit">
         to jeszcze nie jest tlo ale chce zeby bylo jakies w tym stylu
       <p>
-	</div>
+        </div>
 -->
-  <form action="login.php" method="post">
-<h2>LOGOWANIE</h2>
+<form action="login.php" method="post">
+<h2 style="font-family: Arial">LOGOWANIE</h2>
  <?php if (isset($_GET['error'])) { ?>
    <p class="error"><?php echo $_GET['error']; ?></p>
  <?php } ?>
  <?php if (isset($_GET['message'])) { ?>
    <p class="message"><?php echo $_GET['message']; ?></p>
  <?php } ?>
- 
-<label>Nazwa Uzytkownika</label>
+
+<label style="font-family: Arial">Nazwa Uzytkownika</label>
 <input type="text" name="uname" placeholder="User Name"><br>
-<label>Haslo</label>
+<label style="font-family: Arial">Haslo</label>
 <input type="password" name="password" placeholder="Password"><br>
-<button type="submit">Login</button>
+<button type="submit" style="font-family: Arial">Login</button>
 <a href="rejestracja.php">Rejestracja</a>
 </form>
 </body>
 </html>
-
