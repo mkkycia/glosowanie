@@ -14,7 +14,7 @@ if (isset($_POST['uname'])) && isset($_POST['password'])) {
        return $data;
     }
     ///https://www.ukodowani.pl/2020/04/php-szyfrowanie-hasa.html
-    /// strona powyżej to jest ta strona z której wziąłem to. Zapewne to co dodałem nie działa ale nie chce mi się tego sprawdzać teraz.
+    /// strona powyżej to jest ta strona, z której wziąłem to. Zapewne to co dodałem nie działa ale nie chce mi się tego sprawdzać teraz.
     $uname = validate(crypt($_POST['uname']));
     $pass = validate(crypt($_POST['password']));
     if (empty($uname)) {
