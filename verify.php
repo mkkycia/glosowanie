@@ -13,8 +13,8 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
        $data = htmlspecialchars($data);
        return $data;
     }
-    $uname = validate(crypt($_POST['uname']));
-    $pass = validate(crypt($_POST['password']));
+    $uname = validate($_POST['uname']);
+    $pass = validate(password_hash($_POST['password'], PASSWORD_DEFAULT));
     if (empty($uname)) {
         header("Location: rejestracja.php?error=User Name is required");
         exit();

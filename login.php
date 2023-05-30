@@ -6,7 +6,7 @@
 <?php
 session_start();
 include "db_conn.php";
-if (isset($_POST['uname'])) && isset($_POST['password'])) {
+if (isset($_POST['uname']) && isset($_POST['password'])) {
     function validate($data){
        $data = trim($data);
        $data = stripslashes($data);
@@ -15,8 +15,8 @@ if (isset($_POST['uname'])) && isset($_POST['password'])) {
     }
     ///https://www.ukodowani.pl/2020/04/php-szyfrowanie-hasa.html
     /// strona powyżej to jest ta strona, z której wziąłem to. Zapewne to co dodałem nie działa ale nie chce mi się tego sprawdzać teraz.
-    $uname = validate(crypt($_POST['uname']));
-    $pass = validate(crypt($_POST['password']));
+    $uname = validate($_POST['uname']);
+    $pass = validate($_POST['password']);
     if (empty($uname)) {
         header("Location: index.php?error=User Name is required");
         exit();
@@ -28,11 +28,11 @@ if (isset($_POST['uname'])) && isset($_POST['password'])) {
         //echo $uname;
         //echo " ";
         //echo $pass;
-        $sql = "SELECT * FROM loginy WHERE username='$uname' AND password='$pass'";
+        $sql = "SELECT * FROM loginy WHERE username='$uname'";
         $result = $conn->query($sql);
         if ($result->rowCount() === 1) {
             foreach ($result as $row){
-                if (hash_equals($row['username'], $uname) && hash_equals($row['password'], $pass)) {
+                if ($row['username'] === $uname && password_verify($pass, $row['password'])) {
                     echo "Logged in!";
                     $_SESSION['loggedin'] = true;
                     $_SESSION['username'] = $row['username'];
@@ -41,7 +41,7 @@ if (isset($_POST['uname'])) && isset($_POST['password'])) {
                     header("Location: home.php");
                     exit();
                 }else{
-                    //echo "nie";
+					//header("Location: index.php?error=" . $row['password'] . " " . $pass . " " . $_POST['password']);
                     header("Location: index.php?error=Incorect User name or password");
                     exit();
                 }
