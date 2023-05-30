@@ -55,6 +55,9 @@
  <?php if (isset($_GET['error'])) { ?>
    <p class="error"><?php echo $_GET['error']; ?></p>
  <?php } ?>
+ <?php if (isset($_GET['message'])) { ?>
+   <p class="message"><?php echo $_GET['message']; ?></p>
+ <?php } ?>
  
 <label>Nazwa Uzytkownika</label>
 <input type="text" name="uname" placeholder="User Name"><br>
