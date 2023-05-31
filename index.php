@@ -61,11 +61,11 @@
  <?php } ?>
 
 <label style="font-family: Arial">Nazwa Uzytkownika</label>
-<input type="text" name="uname" placeholder="User Name"><br>
+<input type="text" name="uname" placeholder="User Name" style="font-family: Arial"><br>
 <label style="font-family: Arial">Haslo</label>
-<input type="password" name="password" placeholder="Password"><br>
+<input type="password" name="password" placeholder="Password" style="font-family: Arial"><br>
 <button type="submit" style="font-family: Arial">Login</button>
-<a href="rejestracja.php">Rejestracja</a>
+<a href="rejestracja.php" style="font-family: Arial">Rejestracja</a>
 </form>
 </body>
 </html>
