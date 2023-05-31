@@ -1,5 +1,5 @@
 body {
-    background: rgb(150,225,0);
+    background: rgb(200,255,100);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,7 @@ label {
 
 button {
     float: right;
-    background: rgb(255,255,255);
+    background: rgb(128,128,0);
     padding: 10px 15px;
     color: #2137;
     border-radius: 5px;
@@ -51,6 +51,20 @@ button {
 }
 
 button:hover{
-    opacity: .10;
+    opacity: .7;
 }
 
+a {
+    float: right;
+    background: rgb(128,128,0);
+    padding: 10px 40px;
+    color: #2137;
+    border-radius: 10px;
+    margin-right: 10px;
+    border: none;
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: .7;
+}
