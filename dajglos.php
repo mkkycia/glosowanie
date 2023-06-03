@@ -9,6 +9,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	header("Location: index.php");
 	exit();
 }
+if (isset($_SESSION["glosowal"]) && $_SESSION["glosowal"] === true){
+	header("Location: wyniki.php");
+	exit();
+}
+
 
 include "db_conn.php";
 function validate($data){
@@ -31,7 +36,7 @@ if ($result->rowCount() === 1) {
 		$ile = $row['liczba_glosow'];
 	}
 	$uname = $_SESSION['username'];
-	echo $uname;
+	//echo $uname;
 	$sql = "update loginy set zaglosowal = 1 where username='$uname'";
 	$conn->query($sql);
 	$ile += 1;

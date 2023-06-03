@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>	
-
+	<link rel="stylesheet" type="text/css" href="style3.css">
 	<script>
   $( function() {
 	var availableNames = [
@@ -121,8 +121,12 @@
 	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		header("Location: index.php");
 		exit();
-	}	
-	echo "jestes zalogowany jako " . $_SESSION["username"];
+	}
+	if (isset($_SESSION["glosowal"]) && $_SESSION["glosowal"] === true){
+		header("Location: wyniki.php");
+		exit();
+	}
+	//echo "jestes zalogowany jako " . $_SESSION["username"];
 ?>
 
 <form action="dajglos.php" method="post">

@@ -33,14 +33,15 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         if ($result->rowCount() === 1) {
             foreach ($result as $row){
                 if ($row['username'] === $uname && password_verify($pass, $row['password'])) {
-                    echo "Logged in!";
+                    //echo "Logged in!";
                     $_SESSION['loggedin'] = true;
                     $_SESSION['username'] = $row['username'];
                     //$_SESSION['id'] = $row['id'];
 					//echo "sukces";
 
 					if ($row['zaglosowal'] == 1){
-						header("Location: wyniki.php?message=To konto juz oddalo glos");
+						$_SESSION['glosowal'] = true;
+						header("Location: wyniki.php?");
 						exit();
 					}else{
                     	header("Location: home.php");

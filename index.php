@@ -50,6 +50,7 @@
       <p>
         </div>
 -->
+<?php $_SESSION['loggedin'] = false; ?>
 <form action="login.php" method="post">
 <h2 style="font-family: Arial">LOGOWANIE</h2>
  <?php if (isset($_GET['error'])) { ?>
