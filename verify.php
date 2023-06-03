@@ -25,8 +25,8 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
         $sql = "SELECT * FROM loginy WHERE username='$uname'";
         $result = $conn->query($sql);
 		if ($result->rowCount() === 0) {
-				$sql = "insert into loginy (username, password) values ('$uname', '$pass')";
-				$conn->query($sql);
+			$sql = "insert into loginy (username, password, zaglosowal) values ('$uname', '$pass', 0)";
+			$conn->query($sql);
 			header("Location: index.php?message=Account registered succesfully");
 			exit();
         }else{

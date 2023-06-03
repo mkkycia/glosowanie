@@ -36,10 +36,16 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
                     echo "Logged in!";
                     $_SESSION['loggedin'] = true;
                     $_SESSION['username'] = $row['username'];
-                    $_SESSION['id'] = $row['id'];
-                    //echo "sukces";
-                    header("Location: home.php");
-                    exit();
+                    //$_SESSION['id'] = $row['id'];
+					//echo "sukces";
+
+					if ($row['zaglosowal'] == 1){
+						header("Location: wyniki.php?message=To konto juz oddalo glos");
+						exit();
+					}else{
+                    	header("Location: home.php");
+						exit();
+					}
                 }else{
 					//header("Location: index.php?error=" . $row['password'] . " " . $pass . " " . $_POST['password']);
                     header("Location: index.php?error=Incorect User name or password");

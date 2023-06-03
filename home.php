@@ -119,14 +119,17 @@
 <?php
 	session_start();
 	if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-		header("Location: test.php");
+		header("Location: index.php");
 		exit();
-	}
+	}	
 	echo "jestes zalogowany jako " . $_SESSION["username"];
 ?>
 
 <form action="dajglos.php" method="post">
 <h2 style="font-family: Arial">Zaglosuj na najlepszego nauczyciela!</h2>
+<?php if (isset($_GET['error'])) { ?>
+	<p class="error"><?php echo $_GET['error']; ?></p>
+<?php } ?>
 <input type="text" id="tags" name="nazwa" placeholder="Nazwa"><br>
 <button type="submit">wyslij</button>
 </form>
